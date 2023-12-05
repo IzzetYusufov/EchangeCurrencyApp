@@ -7,7 +7,7 @@ type Props = {
   addClasses?: string;
 };
 
-export const CountryAndFlag: React.FC<Props> = ({ currency, divider, addClasses }) => {
+export const CountryAndFlag = ({ currency, divider, addClasses }: Props) => {
   const modifiedCountry = currency.slice(0, 2).toLowerCase();
 
   return (

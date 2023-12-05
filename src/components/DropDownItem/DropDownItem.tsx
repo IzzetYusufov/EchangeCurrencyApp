@@ -5,11 +5,11 @@ import './DropDownItem.css';
 
 type Props = {
   currency: CurrencyData;
-  handleSelect: (v: CurrencyData) => void;
-  handleScrollToTOp: (v: HTMLDivElement | null) => void;
+  handleSelect: (_v: CurrencyData) => void;
+  handleScrollToTOp: (_v: HTMLDivElement | null) => void;
 };
 
-export const DropDownItem: React.FC<Props> = ({ currency, handleSelect, handleScrollToTOp }) => {
+export const DropDownItem = ({ currency, handleSelect, handleScrollToTOp }: Props) => {
   const { ccy: quoteCurrency } = currency;
   const scrollToTopDropDown = useRef<HTMLDivElement | null>(null);
 
@@ -21,8 +21,10 @@ export const DropDownItem: React.FC<Props> = ({ currency, handleSelect, handleSc
   return (
     <div
       role="button"
+      tabIndex={0}
       className="dropdown__item"
       key={quoteCurrency}
+      onKeyUp={(e) => e.key === 'Enter' && handleOnClickToSave()}
       onClick={handleOnClickToSave}
       ref={scrollToTopDropDown}
     >

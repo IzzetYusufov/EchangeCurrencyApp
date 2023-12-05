@@ -10,25 +10,16 @@ import './CurrencyInputBar.css';
 type Props = {
   inputTitle: InputTitle;
   nameOfCurrency: string;
-  handleInputChange: (
-    e: React.ChangeEvent<HTMLInputElement> | string,
-    inputTitle: InputTitle
-  ) => void;
+  handleInputChange: (_e: React.ChangeEvent<HTMLInputElement> | string, _inputTitle: InputTitle) => void;
   inputValue: string;
   isReversed: boolean;
 };
 
-export const CurrencyInputBar: React.FC<Props> = ({
-  inputTitle,
-  handleInputChange,
-  nameOfCurrency,
-  inputValue,
-  isReversed
-}) => {
+export const CurrencyInputBar = ({ inputTitle, handleInputChange, nameOfCurrency, inputValue, isReversed }: Props) => {
   const {
     base_ccy: baseCurrency,
     buy: buyPrice,
-    sale: sellPrice
+    sale: sellPrice,
   } = useCurrenciesStore((state) => state.selectedCurrency as CurrencyData);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -73,18 +64,11 @@ export const CurrencyInputBar: React.FC<Props> = ({
           onClick={() => setIsOpen((prev) => !prev)}
           disabled={nameOfCurrency === baseCurrency}
         >
-          <CountryAndFlag
-            currency={nameOfCurrency}
-            addClasses={nameOfCurrency === baseCurrency ? 'mr-2' : ''}
-          />
+          <CountryAndFlag currency={nameOfCurrency} addClasses={nameOfCurrency === baseCurrency ? 'mr-2' : ''} />
 
-          {nameOfCurrency !== baseCurrency && !isOpen && (
-            <ArrowUp className="currency-bar__arrow" />
-          )}
+          {nameOfCurrency !== baseCurrency && !isOpen && <ArrowUp className="currency-bar__arrow" />}
 
-          {nameOfCurrency !== baseCurrency && isOpen && (
-            <ArrowDown className="currency-bar__arrow" />
-          )}
+          {nameOfCurrency !== baseCurrency && isOpen && <ArrowDown className="currency-bar__arrow" />}
         </button>
       </div>
 

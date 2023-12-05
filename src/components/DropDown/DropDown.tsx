@@ -7,15 +7,13 @@ import './DropDown.css';
 
 type Props = {
   isOpen: boolean;
-  setIsOpen: (v: boolean) => void;
+  setIsOpen: (_v: boolean) => void;
 };
 
-export const DropDown: React.FC<Props> = ({ isOpen, setIsOpen }) => {
+export const DropDown = ({ isOpen, setIsOpen }: Props) => {
   const currenciesData = useCurrenciesStore((state) => state.currenciesData);
   const setCurrentCurrency = useCurrenciesStore((state) => state.setCurrentCurrency);
-  const { ccy: quoteCurrency } = useCurrenciesStore(
-    (state) => state.selectedCurrency as CurrencyData
-  );
+  const { ccy: quoteCurrency } = useCurrenciesStore((state) => state.selectedCurrency as CurrencyData);
   const dropdown = useRef<HTMLDivElement | null>(null);
 
   const handleScrollToTOp = (refElement: HTMLDivElement | null) => {
@@ -34,7 +32,7 @@ export const DropDown: React.FC<Props> = ({ isOpen, setIsOpen }) => {
       ref={dropdown}
       className={classNames('dropdown', {
         'hide-item': !isOpen,
-        'show-item': isOpen
+        'show-item': isOpen,
       })}
     >
       {currenciesData.map(
@@ -46,7 +44,7 @@ export const DropDown: React.FC<Props> = ({ isOpen, setIsOpen }) => {
               handleSelect={handleSelect}
               handleScrollToTOp={handleScrollToTOp}
             />
-          )
+          ),
       )}
     </div>
   );

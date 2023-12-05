@@ -4,11 +4,11 @@ import { CurrencyData } from '../types/CurrencyData';
 interface Store {
   currenciesData: CurrencyData[] | [];
   selectedCurrency: CurrencyData | null;
-  setCurrencies: (data: CurrencyData[]) => void;
-  setCurrentCurrency: (currency: CurrencyData) => void;
-  updateCurrencies: (v: CurrencyData) => void;
+  setCurrencies: (_data: CurrencyData[]) => void;
+  setCurrentCurrency: (_currency: CurrencyData) => void;
+  updateCurrencies: (_v: CurrencyData) => void;
   currencyToEdit: CurrencyData | null;
-  setCurrencyToEdit: (v: CurrencyData | null) => void;
+  setCurrencyToEdit: (_v: CurrencyData | null) => void;
 }
 
 export const useCurrenciesStore = create<Store>((set) => ({
@@ -21,13 +21,10 @@ export const useCurrenciesStore = create<Store>((set) => ({
   updateCurrencies: (updCurrency) => {
     set((prev) => ({
       currenciesData: prev.currenciesData.map((currency) =>
-        currency.ccy !== updCurrency.ccy ? currency : updCurrency
+        currency.ccy !== updCurrency.ccy ? currency : updCurrency,
       ),
 
-      selectedCurrency:
-        prev.selectedCurrency?.ccy === updCurrency.ccy
-          ? updCurrency
-          : prev.selectedCurrency
+      selectedCurrency: prev.selectedCurrency?.ccy === updCurrency.ccy ? updCurrency : prev.selectedCurrency,
     }));
-  }
+  },
 }));

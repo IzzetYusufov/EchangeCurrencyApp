@@ -8,13 +8,8 @@ type Props = {
   currency: CurrencyData;
 };
 
-export const TableRow: React.FC<Props> = ({ currency }) => {
-  const {
-    buy: buyPrice,
-    sale: cellPrice,
-    ccy: quoteCurrency,
-    base_ccy: baseCurrency
-  } = currency;
+export const TableRow = ({ currency }: Props) => {
+  const { buy: buyPrice, sale: cellPrice, ccy: quoteCurrency, base_ccy: baseCurrency } = currency;
 
   return (
     <tr className="row" key={quoteCurrency}>
@@ -26,11 +21,7 @@ export const TableRow: React.FC<Props> = ({ currency }) => {
 
       <TableCell currency={currency} price={buyPrice} title={InputTitle.get} />
 
-      <TableCell
-        currency={currency}
-        price={cellPrice}
-        title={InputTitle.cell}
-      />
+      <TableCell currency={currency} price={cellPrice} title={InputTitle.cell} />
     </tr>
   );
 };

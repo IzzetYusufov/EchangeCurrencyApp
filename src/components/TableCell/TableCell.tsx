@@ -13,14 +13,12 @@ type Props = {
   price: string;
 };
 
-export const TableCell: React.FC<Props> = ({ currency, title, price }) => {
+export const TableCell = ({ currency, title, price }: Props) => {
   const currencyToEdit = useCurrenciesStore((state) => state.currencyToEdit);
-  const setCurrencyToEdit = useCurrenciesStore(
-    (state) => state.setCurrencyToEdit
-  );
+  const setCurrencyToEdit = useCurrenciesStore((state) => state.setCurrencyToEdit);
   const [pencilOnMouseEnter, setPencilOnMouseEnter] = useState({
     price: '',
-    value: ''
+    value: '',
   });
 
   const handleOnCellClick = (curr: CurrencyData) => {
@@ -31,15 +29,10 @@ export const TableCell: React.FC<Props> = ({ currency, title, price }) => {
   return (
     <td
       className="price-cell"
-      onMouseEnter={() =>
-        !currencyToEdit && setPencilOnMouseEnter({ price: price, value: title })
-      }
-      onMouseLeave={() =>
-        !currencyToEdit && setPencilOnMouseEnter({ price: '', value: '' })
-      }
+      onMouseEnter={() => !currencyToEdit && setPencilOnMouseEnter({ price: price, value: title })}
+      onMouseLeave={() => !currencyToEdit && setPencilOnMouseEnter({ price: '', value: '' })}
     >
-      {currencyToEdit?.ccy === currency.ccy &&
-      pencilOnMouseEnter.value === title ? (
+      {currencyToEdit?.ccy === currency.ccy && pencilOnMouseEnter.value === title ? (
         <RowEditForm currency={currency} title={title} />
       ) : (
         <p className="price-cell__text">{price}</p>
@@ -48,7 +41,7 @@ export const TableCell: React.FC<Props> = ({ currency, title, price }) => {
       <PencilToEditIcon
         onClick={() => handleOnCellClick(currency)}
         className={classNames('price-cell__pencil', {
-          'hide-item': pencilOnMouseEnter.price !== price
+          'hide-item': pencilOnMouseEnter.price !== price,
         })}
       />
     </td>
