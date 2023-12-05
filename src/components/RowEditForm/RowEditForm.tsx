@@ -16,7 +16,7 @@ type Props = {
 };
 
 export const RowEditForm = ({ currency, title }: Props) => {
-  const { data: initialCurrencies } = useSWR('db.json', fetcher);
+  const { data: initialCurrencies } = useSWR('/EchangeCurrencyApp/db.json', fetcher);
   const updateCurrencies = useCurrenciesStore((state) => state.updateCurrencies);
   const currencyToEdit = useCurrenciesStore((state) => state.currencyToEdit);
   const setCurrencyToEdit = useCurrenciesStore((state) => state.setCurrencyToEdit);
