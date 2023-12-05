@@ -107,7 +107,7 @@ function App() {
                 Oops! Something went wrong!!! <br /> Please try to reload the page.
               </h1>
               <a
-                href="/"
+                href="."
                 className="bg-slate-300 text-center p-2 rounded-md text-[#413C69] transition-colors ease-linear duration-300 hover:bg-slate-100 focus:text-slate-100"
               >
                 Reload
