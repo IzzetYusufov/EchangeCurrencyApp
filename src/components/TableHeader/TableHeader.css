@@ -1,0 +1,7 @@
+.th-header {
+  @apply w-80 md:w-max p-1 md:p-1 md:whitespace-nowrap;
+}
+
+.th-header__countries-title {
+  @apply flex flex-col pl-1 md:pl-3;
+}

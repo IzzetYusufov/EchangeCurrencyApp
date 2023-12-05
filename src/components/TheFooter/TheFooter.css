@@ -1,0 +1,7 @@
+.footer {
+  @apply bg-footer-nav pb-2 flex justify-center items-end overflow-hidden;
+}
+
+.footer__rights {
+  @apply text-sm text-main;
+}

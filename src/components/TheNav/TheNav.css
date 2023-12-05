@@ -1,0 +1,15 @@
+.nav {
+  @apply pl-5 h-full bg-footer-nav text-lg text-main md:text-2xl md:pl-10;
+}
+
+.nav__logo {
+  @apply flex justify-start items-center h-full;
+}
+
+.nav__img {
+  @apply w-10 h-10 md:w-20 md:h-20;
+}
+
+.nav__text {
+  @apply mb-1 self-end md:mb-3;
+}

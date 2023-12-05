@@ -1,0 +1,7 @@
+.flag {
+  @apply flex gap-1 md:gap-2 text-xs md:text-base text-main;
+}
+
+.dropdown--flag {
+  @apply w-[60px];
+}

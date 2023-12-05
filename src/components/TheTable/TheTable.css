@@ -1,0 +1,15 @@
+.table-board {
+  @apply w-full md:w-fit mb-4 md:mb-2 overflow-x-hidden rounded-md;
+}
+
+.table-board__sizes {
+  @apply w-full md:w-[600px];
+}
+
+.table-board__header-text {
+  @apply font-semibold uppercase text-table-header bg-table-header text-left text-xs md:text-base;
+}
+
+.table-board__body-text {
+  @apply md:font-semibold text-sm md:text-sm divide-y divide-table;
+}

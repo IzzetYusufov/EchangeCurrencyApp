@@ -1,0 +1,19 @@
+.alert {
+  @apply px-4 py-3 absolute -bottom-[70px] text-alert bg-alert border border-alert rounded transition-all ease-linear duration-300;
+}
+
+.alert__title {
+  @apply font-bold;
+}
+
+.alert__text {
+  @apply block sm:inline;
+}
+
+.alert__close-btn {
+  @apply px-4 py-3 absolute -top-2 -right-3;
+}
+
+.alert__close-btn--color {
+  @apply h-6 w-6 fill-current text-alert;
+}

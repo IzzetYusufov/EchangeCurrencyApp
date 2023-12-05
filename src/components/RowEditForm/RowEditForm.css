@@ -1,0 +1,19 @@
+.edit-row__input {
+  @apply flex items-center w-[65px] md:w-[100px] bg-transparent outline-none text-xs md:text-base;
+}
+
+.edit-row__done-btn {
+  @apply h-5 w-5 absolute right-6 top-0 md:right-8 bg-done-and-cancel rounded-b-md cursor-pointer transition-all duration-300 ease-linear hover:scale-110;
+}
+
+.edit-row__cancel-btn {
+  @apply h-5 w-5 absolute right-0 md:right-2 top-0 fill-cancel bg-done-and-cancel rounded-b-full cursor-pointer transition-all duration-300 ease-linear hover:scale-110;
+}
+
+.edit-row__done-btn--disabled {
+  @apply fill-disabled-btn cursor-default hover:scale-100;
+}
+
+.edit-row__done-btn--active {
+  @apply fill-success-btn;
+}

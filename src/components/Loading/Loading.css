@@ -1,0 +1,7 @@
+.loading {
+  @apply inline-block h-20 w-20 absolute top-1/3 left-1/2 text-main animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite];
+}
+
+.loading-text {
+  @apply mt-[35%] !h-px !w-px !p-0 !whitespace-nowrap !border-0 text-main ![clip:rect(0,0,0,0)];
+}

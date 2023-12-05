@@ -1,0 +1,7 @@
+.row {
+  @apply bg-table-body bg-opacity-50 text-main text-base leading-none;
+}
+
+.row__cell {
+  @apply pl-2 p-1.5 flex items-center md:pl-5;
+}

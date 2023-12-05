@@ -1,0 +1,15 @@
+.price-cell {
+  @apply pl-1 relative whitespace-nowrap cursor-default border-l border-main md:w-24 md:pl-2;
+}
+
+.price-cell__text {
+  @apply w-[65px] md:w-[100px] text-xs md:text-base;
+}
+
+.price-cell__pencil {
+  @apply h-6 w-6 absolute bottom-0.5 md:bottom-1.5 right-4 fill-arrow-and-pencil cursor-pointer transition-all duration-300 ease-linear;
+}
+
+.price-cell--border {
+  @apply border-l border-table-header border-opacity-20;
+}

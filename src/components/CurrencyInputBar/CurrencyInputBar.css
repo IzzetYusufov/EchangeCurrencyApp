@@ -1,0 +1,23 @@
+.currency-bar {
+  @apply flex relative rounded-lg;
+}
+
+.currency-bar__container {
+  @apply flex items-center justify-between relative w-[220px] pl-2 bg-currency-bars font-bold text-lg rounded-lg tracking-wider border-4 border-transparent md:w-[250px];
+}
+
+.currency-bar__title {
+  @apply mr-2 text-main text-opacity-50 text-xs md:mr-5;
+}
+
+.currency-bar__text {
+  @apply w-full bg-transparent outline-none focus:text-main;
+}
+
+.currency-bar__btn {
+  @apply flex items-center active:border-main active:text-main outline-none;
+}
+
+.currency-bar__arrow {
+  @apply ml-2 mr-2 h-6 fill-arrow-and-pencil;
+}
