@@ -17,7 +17,7 @@ import { CurrencyData } from './types/CurrencyData';
 import { IsNanError } from './types/IsNanError';
 
 function App() {
-  const { isLoading, error } = useSWR('EchangeCurrencyApp/db.json', fetcher, {
+  const { isLoading, error } = useSWR('db.json', fetcher, {
     onSuccess(data) {
       setCurrencies(data);
       setCurrentCurrency(data[0]);
